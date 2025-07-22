@@ -72,7 +72,17 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
-
+        
+        ["<Leader>c"] = {
+          function()
+            local bufs = vim.fn.getbufinfo({ buflisted = true })
+            require("astrocore.buffer").close(0)
+            if not bufs[2] then
+              require("snacks").dashboard()
+            end
+          end,
+          desc = "Close buffer",
+        },
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },

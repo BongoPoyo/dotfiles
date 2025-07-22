@@ -13,8 +13,11 @@ mkdir -p "$CONFIG_DIR"
 
 
 echo "Linking zsh files..."
-ln -sf "$SOURCE_DIR/.zshrc" "$HOME/.zshrc"
-ln -sf "$SOURCE_DIR/.zshenv" "$HOME/.zshenv"
+#ln -sf "$SOURCE_DIR/.zshrc" "$HOME/.zshrc"
+#ln -sf "$SOURCE_DIR/.zshenv" "$HOME/.zshenv"
+
+ln -sf $(pwd)/.zshrc ~/.zshrc
+ln -sf $(pwd)/.zshenv ~/.zshenv
 
 
 # Loop through every item in the dotfiles directory
