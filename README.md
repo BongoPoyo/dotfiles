@@ -19,3 +19,6 @@ These are mostly taken from others and edited to match my preferences.
 ```ssh-add ~/.ssh/id_ed25519```
 4. Copy public key
 ```cat ~/.ssh/id_ed25519.pub```
+5. Add git email and user name
+```git config --global user.email "bongopoyo@proton.me"```
+```git config --global user.name "Bongo Poyo"```
