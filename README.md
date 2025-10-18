@@ -22,3 +22,5 @@ These are mostly taken from others and edited to match my preferences.
 5. Add git email and user name
 ```git config --global user.email "bongopoyo@proton.me"```
 ```git config --global user.name "Bongo Poyo"```
+6. Enable ssh for github
+```ssh -T git@github.com```
