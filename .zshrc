@@ -38,7 +38,7 @@ zinit light romkatv/powerlevel10k
 
 
 # RUSTUP
-export PATH="$HOME/.cargo:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Source p10k config (Catppuccin)
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
