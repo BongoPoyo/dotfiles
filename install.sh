@@ -19,6 +19,8 @@ echo "Linking zsh files..."
 ln -sf $(pwd)/.zshrc ~/.zshrc
 ln -sf $(pwd)/.zshenv ~/.zshenv
 
+Echo "Linking vim files..."
+ln -sf $(pwd)/.vimrc ~/.vimrc
 
 # Loop through every item in the dotfiles directory
 for item in "$DOTFILES_DIR"/*; do
@@ -49,7 +51,14 @@ done
 echo "🎉 All done!"
 
 # Arch only
-echo "Downloading dependencies"
-sudo pacman -S ttf-jetbrains-mono-nerd maim polybar flameshot kitty picom rofi
+echo "Downloading font"
+sudo pacman -S ttf-jetbrains-mono-nerd kitty
 
-sudo pacman -S wofi hyprland hyprpaper hyprlock mako 
+echo "Downloading vim stuff"
+sudo pacman -S git vim ripgrep fd fzf rust-analyzer
+
+echo "Downloading i3 stuff"
+sudo pacman -S maim polybar flameshot picom rofi
+
+echo "Downloading hyprland stuff"
+sudo pacman -S wofi hyprland hyprpaper hyprlock mako waybar grim wl-copy 
