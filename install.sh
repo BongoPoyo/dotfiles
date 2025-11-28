@@ -33,13 +33,15 @@ for item in "$DOTFILES_DIR"/*; do
   echo "📦 Found: $name"
   read -p "→ Symlink to $dest? [y/N] " answer
 
+
+
   if [[ "$answer" == [Yy]* ]]; then
     if [ -e "$dest" ] || [ -L "$dest" ]; then
       echo "⚠️  Removing existing $dest"
       rm -rf "$dest"
     fi
 
-    ln -s "$item" "$dest"
+    stow $name
     echo "✅ Linked $name → $dest"
   else
     echo "⏭️  Skipped $name"
@@ -61,4 +63,4 @@ echo "Downloading i3 stuff"
 sudo pacman -S maim polybar flameshot picom rofi
 
 echo "Downloading hyprland stuff"
-sudo pacman -S wofi hyprland hyprpaper hyprlock mako waybar grim wl-copy 
+sudo pacman -S wofi hyprland hyprpaper hyprlock mako waybar grim wl-copy
